@@ -1,12 +1,23 @@
 <h1> <b>Implementing-a-SOC-and-Honeynet-in-Azure </b> </h1>
 <h2>Description</h2>
 This is a portfolio that shows my skill in using <b>Microsoft Sentinel</b>. In the project, the use of different Microsoft Azure packages was used such as Active Directory, Log Analytics workspace, Sentinel, Key Vault, Microsoft Defender for Cloud, Virtual Machines, collection rule (windows and Linux), Alert creation (Manual and automatic), workbook(shows map). 
+
+<br/>
+In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, applied some security controls to harden the environment, measured metrics for another 24 hours, and then showed the results below. The metrics we will show are:
+
+- SecurityEvent (Windows Event Logs)
+- Syslog (Linux Event Logs)
+- SecurityAlert (Log Analytics Alerts Triggered)
+- SecurityIncident (Incidents created by Sentinel)
+- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 <br />
 
 <h2>Languages and Utilities Used</h2>
 
 - <b>Google Chrome</b> 
 - <b>Azure Microsoft Sentinel</b>
+- <b>Azure Active directory</b>
+- <b>Azure Microsoft defender for cloud</b>
 
 <h2>Environments Used </h2>
 
