@@ -1,6 +1,6 @@
 <h1> <b>Implementing-a-SOC-and-Honeynet-in-Azure </b> </h1>
 <h2>Description</h2>
-This is a portfolio that shows my skill in using Microsoft Sentinel. In the project, the use of different Microsoft Azure packages was used such as Active Directory, Log Analytics workspace, Sentinel, Key Vault, Microsoft Defender for Cloud, Virtual Machines, collection rule (windows and Linux), Alert creation (Manual and automatic), workbook(shows map). 
+This is a portfolio that shows my skill in using <b>Microsoft Sentinel</b>. In the project, the use of different Microsoft Azure packages was used such as Active Directory, Log Analytics workspace, Sentinel, Key Vault, Microsoft Defender for Cloud, Virtual Machines, collection rule (windows and Linux), Alert creation (Manual and automatic), workbook(shows map). 
 <br />
 
 <h2>Languages and Utilities Used</h2>
