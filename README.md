@@ -1,6 +1,6 @@
 <h1> <b>Implementing-a-SOC-and-Honeynet-in-Azure </b> </h1>
 <h2>Description</h2>
-This is a portfolio that shows my skill in using <b>Microsoft Sentinel</b>. In the project, the use of different Microsoft Azure packages was used such as Active Directory, Log Analytics workspace, Sentinel, Key Vault, Microsoft Defender for Cloud, Virtual Machines, collection rule (windows and Linux), Alert creation (Manual and automatic), workbook(shows map). 
+This is a portfolio that shows my skill in using <b>Microsoft Sentinel</b>. In the project, the use of different Microsoft Azure packages were used such as Active Directory, Log Analytics workspace, Sentinel, Key Vault, Microsoft Defender for Cloud, Virtual Machines, collection rule (windows and Linux), Alert creation (Manual and automatic), workbook(shows map). <br/>
 
 <br/>
 In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, applied some security controls to harden the environment, measured metrics for another 24 hours, and then showed the results below. The metrics we will show are:
@@ -27,11 +27,11 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 
 <p align="center">
 Brief Diagram showing the entire project <br/>
-<img scr="https://i.imgur.com/txJPEBP.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
+<img src="https://i.imgur.com/2eaRuI2.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
 <br />
 <br />
 Github profile to deploy Azure (https://github.com/Azure/Azure-Sentinel/tree/master/Tools/Sentinel-All-In-One)  <br/>
-<img src="https://i.imgur.com/Jsmrq5T.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
+<img src="https://i.imgur.com/txJPEBP.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
 <br />
 <br />
 Custom deployment configuration <br/>
