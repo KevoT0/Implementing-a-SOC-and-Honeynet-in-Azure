@@ -27,7 +27,7 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 
 <p align="center">
 Brief Diagram showing the entire project <br/>
-<https://i.imgur.com/txJPEBP.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
+<img scr="https://i.imgur.com/txJPEBP.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
 <br />
 <br />
 Github profile to deploy Azure (https://github.com/Azure/Azure-Sentinel/tree/master/Tools/Sentinel-All-In-One)  <br/>
