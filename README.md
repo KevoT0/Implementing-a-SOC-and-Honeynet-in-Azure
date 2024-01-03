@@ -25,8 +25,8 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 
 <h2>Program walk-through:</h2>
 
-<p align="center">
 ## Brief Diagram showing the entire project <br/>
+<p align="center">
 <img src="https://i.imgur.com/2eaRuI2.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
 <br />
 <br />
@@ -47,7 +47,7 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - Azure Storage Account
 - Microsoft Sentinel
 
-For the "BEFORE" metrics, all resources were originally deployed, and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+For the "BEFORE" metrics, all resources were originally deployed, and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources were deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic except my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
