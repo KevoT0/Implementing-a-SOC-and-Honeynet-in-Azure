@@ -26,97 +26,80 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 <h2>Program walk-through:</h2>
 
 <p align="center">
-Brief Diagram showing the entire project <br/>
+## Brief Diagram showing the entire project <br/>
 <img src="https://i.imgur.com/2eaRuI2.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
 <br />
 <br />
-Github profile to deploy Azure (https://github.com/Azure/Azure-Sentinel/tree/master/Tools/Sentinel-All-In-One)  <br/>
-<img src="https://i.imgur.com/txJPEBP.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Custom deployment configuration <br/>
-<img src="https://i.imgur.com/nK1qtb6.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Diagnostic Settings <br/>
-<img src="https://i.imgur.com/U4Fy88k.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Sentinel Analytic rules  <br/>
-<img src="https://i.imgur.com/CC664dt.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Setting up User Entity behavior <br/>
-<img src="https://i.imgur.com/8soDNdU.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Creating watchlist for  <br/>
-<img src="https://i.imgur.com/GgIis0h.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br /> 
-Creating an Analytic Scheduled Rule using KQL <br/>
-<img src="https://i.imgur.com/fbAnegq.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Alert Enrichment <br/>
-<img src="https://i.imgur.com/422hjIQ.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Custom and Alert Information <br/>
-<img src="https://i.imgur.com/vtiQ3XD.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Query Scheduling <br/>
-<img src="https://i.imgur.com/PAadSOC.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Incident Setting <br/>
-<img src="https://i.imgur.com/QXPiu8p.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Disabling Security Features <br/>
-<img src="https://i.imgur.com/Qq0GOnM.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-creating a new user <br/>
-<img src="https://i.imgur.com/N8Dz4S0.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Assigning roles to the new user <br/>
-<img src="https://i.imgur.com/WEwZ6AL.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
- New User Password Update  <br/>
-<img src="https://i.imgur.com/SdxkiLC.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Logging into the new user settings to perform an attack <br/>
-<img src="https://i.imgur.com/SsiEdDs.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Changing user's password for exploitation <br/>
-<img src="https://i.imgur.com/EEP0pIt.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br /> 
-Disabling and deleting Diagnostic settings <br/>
-<img src="https://i.imgur.com/V3TiyeE.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Disabling health monitoring <br/>
-<img src="https://i.imgur.com/a8k417M.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Generated incident Detected by Sentinel <br/>
-<img src="https://i.imgur.com/EMLUxb1.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Successful sign-in from Tor <br/>
-<img src="https://i.imgur.com/1r4NTmL.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
-<br />
-Sentinel showing Logged activity by attacker  <br/>
-<img src="https://i.imgur.com/ZDSqLjn.png" height="80%" width="80%" alt="Microsoft Sentinel SIEM Steps"/>
-<br />
+
+<h2>Architecture Before Harding / Security Controls</h2>
+<p align="center">
+<img src="https://i.imgur.com/8dlXyCE.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
+<h2>Architecture After Hardening / Security Controls</h2>
+<p align="center">
+<img src="https://i.imgur.com/BMS073z.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/> <br>
+
+ The architecture of the mini honeynet in Azure consists of the following components:
+- Virtual Network (VNet)
+- Network Security Group (NSG)
+- Virtual Machines (2 Windows, 1 Linux)
+- Log Analytics Workspace
+- Azure Key Vault
+- Azure Storage Account
+- Microsoft Sentinel
+
+For the "BEFORE" metrics, all resources were originally deployed, and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+
+For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic except my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+
+## Attack Maps Before Hardening / Security Controls
+<h3>NSG Allowed Inbound Malicious Flows</h3>
+<p align="center">
+<img src="https://i.imgur.com/Jls4anR.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
+<h3>Linux Syslog Auth Failures</h3>
+<p align="center">
+<img src="https://i.imgur.com/UYP68Nm.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/>
+<h3>Windows RDP/SMB Auth Failures</h3>
+<p align="center">
+<img src="https://i.imgur.com/gifXZnN.png" height="80%" width="80%" alt="Implementing-a-SOC-and-Honeynet-in-Azure"/> <br>
+<br>
+
+## Metrics Before Hardening / Security Controls
+
+The following table shows the metrics we measured in our insecure environment for 24 hours:
+Start Time 2023-12-25 13:15:44
+Stop Time 2023-12-26T13:15:44
+
+| Metric                   | Count
+| ------------------------ | -----
+| SecurityEvent            | 25102
+| Syslog                   | 4227
+| SecurityAlert            | 1
+| SecurityIncident         | 180
+| AzureNetworkAnalytics_CL | 2240
+
+## Attack Maps Before Hardening / Security Controls
+
+```All map queries returned no results due to no instances of malicious activity for the 24-hour period after hardening.```
+
+## Metrics After Hardening / Security Controls
+
+The following table shows the metrics we measured in our environment for another 24 hours, but after I applied security controls:
+Start Time 2023-12-28 00:06:44
+Stop Time	2023-12-28 00:06:44
+
+| Metric                   | Count
+| ------------------------ | -----
+| SecurityEvent            | 13023
+| Syslog                   | 10
+| SecurityAlert            | 0
+| SecurityIncident         | 9
+| AzureNetworkAnalytics_CL | 0
+
+## Conclusion
+
+In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
+
+It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
 <br />
 </p>
 
